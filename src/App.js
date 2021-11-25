@@ -66,6 +66,7 @@ export const ResponsiveWrapper = styled.div`
 `;
 
 export const StyledLogo = styled.img`
+  margin-top: 30px;
   width: 200px;
   @media (min-width: 767px) {
     width: 300px;
@@ -198,26 +199,26 @@ function App() {
       <s.Container
         flex={1}
         ai={"center"}
-        style={{ padding: 24, backgroundColor: "var(--primary)" }}
+        style={{
+          padding: 24,
+          backgroundColor: "var(--primary)",
+          minHeight: "96vh",
+        }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
         <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
-          </s.Container>
+
+          <s.Container flex={0} jc={"center"} ai={"center"}></s.Container>
+
           <s.SpacerLarge />
           <s.Container
-            flex={2}
+            flex={4}
             jc={"center"}
             ai={"center"}
             style={{
-              backgroundColor: "var(--accent)",
               padding: 24,
-              borderRadius: 24,
-              border: "4px dashed var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
             <s.TextTitle
@@ -369,15 +370,31 @@ function App() {
             )}
             <s.SpacerMedium />
           </s.Container>
-          <s.SpacerLarge />
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg
-              alt={"example"}
-              src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
-            />
+
+          <s.Container
+            flex={4}
+            jc={"center"}
+            ai={"center"}
+            style={{
+              padding: 24,
+            }}
+          >
+            <s.TextDescription
+              style={{
+                textAlign: "center",
+                color: "var(--primary-text)",
+              }}
+            >
+              images will go HERE
+            </s.TextDescription>
+            <s.SpacerSmall />
           </s.Container>
+          <s.SpacerLarge />
+
+          <s.Container flex={0} jc={"center"} ai={"center"}></s.Container>
+
         </ResponsiveWrapper>
+
         <s.SpacerMedium />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription
@@ -387,7 +404,7 @@ function App() {
             }}
           >
             Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
+            {CONFIG.NETWORK.NAME} Mainnet) and are visiting the correct domain. Please note:
             Once you make the purchase, you cannot undo this action.
           </s.TextDescription>
           <s.SpacerSmall />
@@ -402,7 +419,72 @@ function App() {
             gas limit.
           </s.TextDescription>
         </s.Container>
+
       </s.Container>
+
+      <ResponsiveWrapper flex={0} style={{ padding: 24 }} style={{
+          backgroundColor: "var(--secondary)",
+        }}>
+        <s.Container flex={1} jc={"center"} ai={"center"} fd={"row"} style={{
+          minHeight: "96vh",
+        }}>
+
+          <s.Container
+            flex={1}
+            jc={"center"}
+            ai={"center"}
+            style={{
+              padding: 24,
+            }}
+          >
+            <s.TextDescription
+              style={{
+                textAlign: "center",
+                color: "var(--primary-text)",
+              }}
+            >
+              images will go HERE
+            </s.TextDescription>
+            <s.SpacerSmall />
+          </s.Container>
+
+          <s.Container
+            flex={1}
+            jc={"center"}
+            ai={"center"}
+            style={{
+              padding: 24,
+            }}
+          >
+            <s.TextTitle style={{
+                color: "var(--primary-text)",
+              marginBottom: "50px",
+            }} >
+              Community is the most important characteristic of 
+              the NFT creator and collector economy.
+              Our communication is culturally significant, 
+                a bonding method we use to grow together.
+            </s.TextTitle>
+            <s.TextDescription style={{
+              textAlign: "left",
+              color: "var(--primary-text)",
+            }} >
+              <p>We wish each other gm, no matter the time of day. 
+                Sometimes we wish each other gn.
+                Probably nothing is also something we say.
+                We invoke conviction in one another by saying wagmi soon.
+                Always encouraging our frens to DYOR and asking wen moon.
+                Generative art seems legit, forever searching for alpha.
+                Buying on secondary after reveal, avoiding gas wars maybe forming a DAO.
+                IYKYK JPEG’s are everything, we are so early, don’t right click and save.
+                Mint and ape in then swim like a whale.</p>
+            </s.TextDescription>
+            <s.SpacerSmall />
+          </s.Container>
+
+        </s.Container>
+      </ResponsiveWrapper>
+
     </s.Screen>
   );
 }
